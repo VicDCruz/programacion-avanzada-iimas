@@ -120,7 +120,8 @@ public class Cuenta {
 
     @Override
     public String toString() {
-        return "|Propietario: " + this.owner + "\t" + "Número de cuenta: " + this.accountNumber + "\t\t" + "Dinero: $"
-                + this.money + "|";
+        return "Propietario: " + "\t\t" + this.owner + "\n" + 
+                "Número de cuenta: " + "\t" + this.accountNumber + "\n" + 
+                "Dinero:" + "\t\t\t$" + this.money;
     }
 }

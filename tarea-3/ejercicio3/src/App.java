@@ -8,11 +8,11 @@ public class App {
     private static String getName(Scanner scanner) {
         boolean correct = false;
         String name = "";
-        
+
         while (!correct) {
             System.out.print("Ingresa un nombre: ");
             name = scanner.nextLine();
-    
+
             System.out.println("El sistema obtuvo el nombre: " + name);
             System.out.print("¿Es correcto? (S/N) - ");
             char correctChar = scanner.nextLine().charAt(0);
@@ -51,10 +51,11 @@ public class App {
         cuentas.get(1).descontarSaldo(170);
         System.out.println("--------------");
         System.out.println("Creando 3 nuevas cuentas");
-        cuentas.add(new Cuenta("Juan", INITIAL_ACCOUNT + cuentas.size() + ""));
-        cuentas.add(new Cuenta("Tere", INITIAL_ACCOUNT + cuentas.size() + ""));
-        cuentas.add(new Cuenta("David", INITIAL_ACCOUNT + cuentas.size() + ""));
-        System.out.println("Ahora hay " + cuentas.size() + "cuentas, en total");
+        cuentas.add(new Cuenta("Juan", INITIAL_ACCOUNT + cuentas.size() + "", 500));
+        cuentas.add(new Cuenta("Tere", INITIAL_ACCOUNT + cuentas.size() + "", 600));
+        cuentas.add(new Cuenta("David", INITIAL_ACCOUNT + cuentas.size() + "", 700));
+        System.out.println("Ahora hay " + cuentas.size() + " cuentas, en total");
+        System.out.println("--------------");
         for (Cuenta cuenta : cuentas) {
             System.out.println(cuenta.toString());
             System.out.println("--------------");
