@@ -29,6 +29,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
 
+        // Ejemplos obligatorios
         List<Cuenta> cuentas = new ArrayList<Cuenta>();
         cuentas.add(new Cuenta(getName(scanner), INITIAL_ACCOUNT + cuentas.size() + "", 500));
         cuentas.add(new Cuenta(getName(scanner), INITIAL_ACCOUNT + cuentas.size() + ""));
@@ -62,5 +63,28 @@ public class App {
         }
 
         scanner.close();
+
+        // Ejemplos propios
+        System.out.println("Quitando más dinero del que hay en la cuenta de " + 
+                cuentas.get(2).getOwner());
+        System.out.println("Actualmente la cuenta de " + 
+                cuentas.get(2).getOwner() + 
+                " tiene $" + cuentas.get(2).getMoney());
+        cuentas.get(2).descontarSaldo(1000);
+        System.out.println("El saldo no se modificó: $" + cuentas.get(2).getMoney());
+        System.out.println("--------------");
+        System.out.println("El nombre de la 4da cuenta creada le faltan apellidos");
+        System.out.println("Antes: " + cuentas.get(3).getOwner());
+        cuentas.get(3).setOwner("Tere Pozos");
+        System.out.println("Después: " + cuentas.get(3).getOwner());
+        System.out.println("--------------");
+        System.out.println("Transfiriendo más fondos de los necesarios (De la 3ra a la 5ta cuenta creada)");
+        cuentas.get(2).transferirDinero(cuentas.get(4), 10000);
+        System.out.println("Resumen general después de estos cambios");
+        System.out.println("--------------");
+        for (Cuenta cuenta : cuentas) {
+            System.out.println(cuenta.toString());
+            System.out.println("--------------");
+        }
     }
 }
