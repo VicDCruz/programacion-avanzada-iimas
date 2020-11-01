@@ -45,15 +45,6 @@ public class Cuenta {
     }
 
     /**
-     * Poner un nuevo valor
-     * 
-     * @param accountNumber Número de cuenta
-     */
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
-    /**
      * Obtener el dinero total acumulado en la cuenta
      * 
      * @return Dinero actual en la cuenta
