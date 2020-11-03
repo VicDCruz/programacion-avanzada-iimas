@@ -1,6 +1,8 @@
 /**
  * Principal
  */
+package mx.unam.iimas.pa;
+
 public class Principal {
     public static void main(String[] args) {
         Arbol arbolUno = new Arbol();
@@ -13,5 +15,5 @@ public class Principal {
         arbolTres.imprimirDescripcion();
         arbolCuatro.imprimirDescripcion();
     }
-    
+
 }

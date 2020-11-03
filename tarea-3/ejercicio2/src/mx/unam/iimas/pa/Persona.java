@@ -1,6 +1,9 @@
 /**
  * Persona
  */
+
+package mx.unam.iimas.pa;
+
 public class Persona {
 
     private String rfc;

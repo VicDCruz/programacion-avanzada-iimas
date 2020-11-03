@@ -1,6 +1,9 @@
 /**
  * Cuenta
  */
+
+package mx.unam.iimas.pa;
+
 public class Cuenta {
 
     private String owner;
@@ -77,7 +80,10 @@ public class Cuenta {
      * @param money Cantidad de dinero entrante
      */
     public void ingresarSaldo(double money) {
-        this.money += money;
+        if (money >= 0)
+            this.money += money;
+        else
+            System.out.println("No se puede introducir cantidades negativas");
     }
 
     /**
@@ -86,10 +92,13 @@ public class Cuenta {
      * @param money Cantidad de dinero saliente
      */
     public void descontarSaldo(double money) {
-        if (this.money >= money)
-            this.money -= money;
-        else
-            System.out.println("Fondos insuficientes");
+        if (money >= 0) {
+            if (this.money >= money)
+                this.money -= money;
+            else
+                System.out.println("Fondos insuficientes");
+        } else
+            System.out.println("No se puede introducir cantidades negativas");
     }
 
     /**

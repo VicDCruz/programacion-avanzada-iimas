@@ -1,3 +1,5 @@
+package mx.unam.iimas.pa;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -65,11 +67,9 @@ public class App {
         scanner.close();
 
         // Ejemplos propios
-        System.out.println("Quitando más dinero del que hay en la cuenta de " + 
-                cuentas.get(2).getOwner());
-        System.out.println("Actualmente la cuenta de " + 
-                cuentas.get(2).getOwner() + 
-                " tiene $" + cuentas.get(2).getMoney());
+        System.out.println("Quitando más dinero del que hay en la cuenta de " + cuentas.get(2).getOwner());
+        System.out.println(
+                "Actualmente la cuenta de " + cuentas.get(2).getOwner() + " tiene $" + cuentas.get(2).getMoney());
         cuentas.get(2).descontarSaldo(1000);
         System.out.println("El saldo no se modificó: $" + cuentas.get(2).getMoney());
         System.out.println("--------------");
@@ -80,6 +80,12 @@ public class App {
         System.out.println("--------------");
         System.out.println("Transfiriendo más fondos de los necesarios (De la 3ra a la 5ta cuenta creada)");
         cuentas.get(2).transferirDinero(cuentas.get(4), 10000);
+        System.out.println("--------------");
+        System.out.println("Ingresando dinero negativo desde la cuenta de " + cuentas.get(4).getOwner());
+        cuentas.get(4).descontarSaldo(-10);
+        System.out.println("Sacando dinero negativo desde la cuenta de " + cuentas.get(4).getOwner());
+        cuentas.get(4).ingresarSaldo(-10);
+        System.out.println("--------------");
         System.out.println("Resumen general después de estos cambios");
         System.out.println("--------------");
         for (Cuenta cuenta : cuentas) {

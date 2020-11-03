@@ -1,6 +1,9 @@
 /**
  * TestPersona
  */
+
+package mx.unam.iimas.pa;
+
 public class TestPersona {
     public static void main(String[] args) {
         Persona persona1 = new Persona("Juan");

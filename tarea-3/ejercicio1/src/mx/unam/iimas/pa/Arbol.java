@@ -2,6 +2,8 @@
  * Principal
  */
 
+package mx.unam.iimas.pa;
+
 public class Arbol {
     private String tipo;
     private double altura;
