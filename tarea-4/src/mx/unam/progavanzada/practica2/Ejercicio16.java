@@ -1,8 +1,8 @@
 package mx.unam.progavanzada.practica2;
 
 public class Ejercicio16 {
-    public static void hablarConAnimal(Animal a) {
-        a.comunicar();
+    public static void pedirAlimento(Animal a) {
+        a.come();
     }
 
     public static void main(String[] args) {
@@ -27,8 +27,8 @@ public class Ejercicio16 {
                     break;
             }
         }
-        System.out.println("===== Comunicándose con los animales =====");
+        System.out.println("===== Observar alimentacion de animales =====");
         for (Animal animal : animales)
-            hablarConAnimal(animal);
+            pedirAlimento(animal);
     }
 }
