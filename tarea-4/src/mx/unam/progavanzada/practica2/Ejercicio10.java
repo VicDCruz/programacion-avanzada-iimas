@@ -10,19 +10,21 @@ public class Ejercicio10 {
         return output / numbers.length;
     }
 
-    public static double getNumber(Scanner scanner) {
+    public static double getNumber(Scanner scanner, boolean hasNegatives) {
         double output = 0;
-        while (!scanner.hasNextDouble()) {
-            System.out.print("Escribe un número: ");
-            scanner.next();
+        while (output >= 0) {
+            while (!scanner.hasNextDouble()) {
+                System.out.print("Escribe un número: ");
+                scanner.next();
+            }
+            output = scanner.nextDouble();
         }
-        output = scanner.nextDouble();
         return output;
     }
 
     public static int getLength(Scanner scanner) {
         System.out.print("Cantidad de números a promediar: ");
-        double n = getNumber(scanner);
+        double n = getNumber(scanner, false);
         int output = (int) n;
         if (n != Math.rint(n))
             System.out.println("El número no es entero, se truncará a " + output);
@@ -32,7 +34,7 @@ public class Ejercicio10 {
     public static void getNumbers(double[] array, Scanner scanner) {
         for (int i = 0; i < array.length; i++) {
             System.out.print("Escribe el " + (i + 1) + "° elemento: ");
-            array[i] = getNumber(scanner);
+            array[i] = getNumber(scanner, true);
         }
     }
 
