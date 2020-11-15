@@ -34,7 +34,7 @@ public class Ejercicio11 {
             if (response == 'S' || response == 's') {
                 System.out.println("Introduce tu texto");
                 String text = scanner.nextLine();
-                System.out.println("Este texto " + (isPalindrome(text) ? "SÍ": "NO") + " es palíndromo");
+                System.out.println("Este texto " + (isPalindrome(text) ? "SI": "NO") + " es palíndromo");
             } else {
                 System.out.println("somos o no somos: " + isPalindrome("somos o no somos"));
                 System.out.println("s o m o s o n o s o m o s: " + isPalindrome("s o m o s o n o s o m o s"));
