@@ -24,7 +24,7 @@ public class Ejercicio13 {
         }
     }
 
-    public static int getNumber(Scanner scanner, boolean hasNegatives) {
+    public static int getNumber(Scanner scanner) {
         while (!scanner.hasNextDouble()) {
             System.out.print("Esto no es un número, intenta de nuevo: ");
             scanner.next();
@@ -37,8 +37,11 @@ public class Ejercicio13 {
 
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Escribe un número: ");
-            int n = getNumber(scanner, false);
+            int n = 0;
+            while (n <= 0) {
+                System.out.print("Escribe un número (> 0): ");
+                n = getNumber(scanner);
+            }
             int[][] m = generateMatrix(n);
             System.out.println("Se generó un matrix de " + n + " x " + n + " dimensiones");
             printMatrix(m);

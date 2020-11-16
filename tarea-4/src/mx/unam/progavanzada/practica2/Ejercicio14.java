@@ -15,8 +15,11 @@ public class Ejercicio14 extends Ejercicio13 {
 
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Escribe un número: ");
-            int n = getNumber(scanner, false);
+            int n = 0;
+            while (n <= 0) {
+                System.out.print("Escribe un número (> 0): ");
+                n = getNumber(scanner);
+            }
             int[][] m = generateMatrix(n);
             System.out.println("Se generó un matrix de " + n + " x " + n + " dimensiones");
             printMatrix(m);
@@ -28,12 +31,18 @@ public class Ejercicio14 extends Ejercicio13 {
             }
             do {
                 if (response == 'S' || response == 's') {
-                    System.out.println("Introduce coordenada en x [0, " + (n - 1) + "]: ");
-                    int x = getNumber(scanner, false);
-                    System.out.println("Introduce coordenada en y [0, " + (n - 1) + "]: ");
-                    int y = getNumber(scanner, false);
+                    int x = -1;
+                    while (x < 0 || x >= n) {
+                        System.out.println("Introduce coordenada en x [0, " + (n - 1) + "]: ");
+                        x = getNumber(scanner);
+                    }
+                    int y = -1;
+                    while (y < 0 || y >= n) {
+                        System.out.println("Introduce coordenada en y [0, " + (n - 1) + "]: ");
+                        y = getNumber(scanner);
+                    }
                     System.out.println("Introduce el nuevo valor: ");
-                    int value = getNumber(scanner, true);
+                    int value = getNumber(scanner);
                     m = changeCell(m, x, y, value);
                     System.out.println("Valores actuales de la matriz");
                     printMatrix(m);

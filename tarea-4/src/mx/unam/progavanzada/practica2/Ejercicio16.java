@@ -27,7 +27,7 @@ public class Ejercicio16 {
                     break;
             }
         }
-        System.out.println("===== Observar alimentacion de animales =====");
+        System.out.println("===== Observar alimentación de animales =====");
         for (Animal animal : animales)
             pedirAlimento(animal);
     }
